@@ -4,6 +4,8 @@ const bodyParser= require('body-parser');
 
 const app = express();
 
+const port = process.env.PORT || 5000
+
 
 const MongoClient = require('mongodb').MongoClient
 
@@ -17,7 +19,7 @@ MongoClient.connect(mongodb_connection_string , { useUnifiedTopology: true })
 
     const clientRequestsCollection = db.collection('clientRequests')
 
-    app.listen(5000, function() {
+    app.listen(port, function() {
         console.log('listening on 5000')
       })
     
